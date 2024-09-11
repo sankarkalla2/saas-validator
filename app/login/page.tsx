@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,8 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 
@@ -36,11 +33,19 @@ function LoginForm() {
       </CardHeader>
       <CardContent>
         <div className="grid gap-2">
-          <Button className="w-full" onClick={() => handleLogin("google")}>
+          <Button
+            className="w-full"
+            onClick={() => handleLogin("google")}
+            disabled={isLoading}
+          >
             <FcGoogle className="h-5 w-5 mr-2" />
             Sign up with Google
           </Button>
-          <Button className="w-full" onClick={() => handleLogin("github")}>
+          <Button
+            className="w-full"
+            onClick={() => handleLogin("github")}
+            disabled={isLoading}
+          >
             <FaGithub className="h-5 w-5 mr-2" />
             Sign up with GitHub
           </Button>

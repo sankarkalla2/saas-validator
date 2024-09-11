@@ -17,10 +17,10 @@ export async function POST(request: Request) {
   const data = JSON.parse(rawBody);
 
   const eventName = data["meta"]["event_name"];
-  const obj = data["data"]["attributes"];
-  const objId = data["data"]["id"];
+  // const obj = data["data"]["attributes"];
+  // const objId = data["data"]["id"];
 
-  let eventData;
+  // let eventData;
   switch (eventName) {
     case "subscription_created":
       console.log("new subscription successfully", data);

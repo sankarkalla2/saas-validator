@@ -1,4 +1,4 @@
-import { Logout } from "@/actions/auth";
+// import { Logout } from "@/actions/auth";
 import { AnimatedGradientTextEffect } from "@/components/animated-gradient-text";
 import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
@@ -13,10 +13,7 @@ import {
 import { plans } from "@/data/pricing-plans";
 import {
   ArrowUpAZIcon,
-  BookMarked,
   Check,
-  CircleCheck,
-  CircleCheckBig,
   CloudIcon,
   Fingerprint,
   Lock,
@@ -65,7 +62,7 @@ export default function Home() {
         </p>
 
         <div className="flex gap-x-3 items-center justify-center">
-          <Button>Let's get started</Button>
+          <Button>Let&apos;s get started</Button>
           <Button className="" variant={"outline"}>
             Watch Demo
           </Button>
@@ -77,6 +74,7 @@ export default function Home() {
             alt="website screenshot"
             fill
             className="object-cover"
+            loading="lazy"
           />
         </div>
       </div>
@@ -134,8 +132,8 @@ export default function Home() {
             </p> */}
           </div>
 
-          {plans.map((plan) => (
-            <Card className="shadow-lg px-4">
+          {plans.map((plan, index) => (
+            <Card className="shadow-lg px-4" key={index}>
               <CardHeader>
                 <CardTitle className="text-indigo-600 text-4xl">
                   {plan.title}
