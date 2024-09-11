@@ -1,8 +1,8 @@
+import crypto from "crypto";
 export async function POST(request: Request) {
-  const crypto = require("crypto");
   const rawBody = await request.text();
 
-  const secret = process.env.LEMONSQUEEZY_WEBHOOK_SECRET;
+  const secret = process.env.LEMONSQUEEZY_WEBHOOK_SECRET!;
   const hmac = crypto.createHmac("sha256", secret);
   const digest = Buffer.from(hmac.update(rawBody).digest("hex"), "utf8");
   const signature = Buffer.from(

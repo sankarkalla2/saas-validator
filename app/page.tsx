@@ -95,8 +95,8 @@ export default function Home() {
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              {features.map((feature) => (
-                <div key={feature.name} className="relative pl-16">
+              {features.map((feature, index) => (
+                <div key={`feature-${index}`} className="relative pl-16">
                   <dt className="text-base font-semibold leading-7 text-gray-900">
                     <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                       <feature.icon
@@ -149,8 +149,11 @@ export default function Home() {
                   /month
                 </div>
                 <div className="flex flex-col items-start gap-y-1">
-                  {plan.features.map((feature) => (
-                    <div className="flex items-center lg:text-lg">
+                  {plan.features.map((feature, index) => (
+                    <div
+                      className="flex items-center lg:text-lg"
+                      key={`subfeature-${index}`}
+                    >
                       <Check className="h-5 w-5 mr-2 text-blue-600" />
                       {feature}
                     </div>
